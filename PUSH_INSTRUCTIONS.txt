@@ -1,0 +1,21 @@
+
+Ready to push to GitHub.
+
+1) Initialize repo
+   git init
+   git branch -M main
+
+2) Add remote
+   git remote add origin https://github.com/jpasley/Acronis-AlgaPSA-Integration.git
+
+3) Stage & commit
+   git add .
+   git commit -m "Initial commit: Acronis ↔ AlgaPSA integration (wizard, admin, docker, CI, installer)"
+
+4) Push
+   git push -u origin main
+
+After push:
+- GitHub Actions will build & publish: ghcr.io/jpasley/acronis-algapsa-integration:latest
+- Install on server:
+  wget -qO- https://raw.githubusercontent.com/jpasley/Acronis-AlgaPSA-Integration/main/scripts/bootstrap.sh | sudo bash -s -- --repo https://github.com/jpasley/Acronis-AlgaPSA-Integration.git --image-repo ghcr.io/jpasley/acronis-algapsa-integration --port 8000

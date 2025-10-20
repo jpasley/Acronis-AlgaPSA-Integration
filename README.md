@@ -13,7 +13,7 @@ Built with **FastAPI** + **APScheduler** for manual and scheduled runs. Works gr
 
 1) **Clone or import**
 ```bash
-git clone https://github.com/your-org/alga-acronis-sync.git
+git clone https://github.com/jpasley/Acronis-AlgaPSA-Integration.git
 cd alga-acronis-sync
 ```
 
@@ -130,11 +130,23 @@ This repo includes a GitHub Actions workflow that builds and pushes the Docker i
 2) The workflow uses `${{ secrets.GITHUB_TOKEN }}` with `packages: write` permission by default (granted automatically).
 
 **Image name**:
-- `ghcr.io/<owner>/<repo>:latest`
+- `ghcr.io/jpasley/acronis-algapsa-integration:latest`
 - Also tags: the Git `sha`, and any semver tag (e.g. `v1.0.0`).
 
 **Server install using prebuilt image** (no on-server build):
 ```bash
 # One-liner using the installer; swap in your repo & GHCR coordinates
-sudo bash -c "$(curl -fsSL https://raw.githubusercontent.com/<owner>/<repo>/main/scripts/install.sh)" \  --repo https://github.com/<owner>/<repo>.git \  --image-repo ghcr.io/<owner>/<repo> \  --port 8000
+sudo bash -c "$(curl -fsSL https://raw.githubusercontent.com/<owner>/<repo>/main/scripts/install.sh)" \  --repo https://github.com/<owner>/<repo>.git \  --image-repo ghcr.io/jpasley/acronis-algapsa-integration \  --port 8000
+```
+
+
+---
+
+## Quick Install (Ubuntu, one-liner — personal repo)
+
+```bash
+wget -qO- https://raw.githubusercontent.com/jpasley/Acronis-AlgaPSA-Integration/main/scripts/bootstrap.sh | sudo bash -s -- \\
+  --repo https://github.com/jpasley/Acronis-AlgaPSA-Integration.git \\
+  --image-repo ghcr.io/jpasley/acronis-algapsa-integration \\
+  --port 8000
 ```
