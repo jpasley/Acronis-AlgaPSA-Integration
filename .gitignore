@@ -1,0 +1,13 @@
+__pycache__/
+
+.env
+.venv/
+.mypy_cache/
+.pytest_cache/
+.DS_Store
+.replit
+.pythonlibs
+build/
+dist/
+*.tar.zst
+*.log
